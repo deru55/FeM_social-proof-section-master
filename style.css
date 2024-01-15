@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-family-default: "League Spartan", sans-serif;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+  --clr-primary-1: hsl(300, 43%, 22%);
+  --clr-primary-2: hsl(333, 80%, 67%);
+  --clr-neutral-1: hsl(303, 10%, 53%);
+  --clr-neutral-2: hsl(300, 24%, 96%);
+  --clr-neutral-3: hsl(0, 0%, 100%);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--font-family-default);
+  font-weight: var(--fw-400);
+  font-size: 0.938rem; /* 15px */
+  text-align: center;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-neutral-1);
+  background: url(images/bg-pattern-top-mobile.svg) top left no-repeat,
+    url(images/bg-pattern-bottom-mobile.svg) bottom right no-repeat;
+}
+
+.card-container {
+  margin: 2rem 1rem;
+  max-width: 33rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.description-section,
+.ratings-section,
+.reviews-section,
+.rating-item,
+.review-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.description-section,
+.ratings-section,
+.reviews-section {
+  gap: 1rem;
+}
+
+.flex-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-title {
+  font-size: 2.5rem;
+  font-weight: var(--fw-700);
+  line-height: initial;
+  color: var(--clr-primary-1);
+}
+
+.ratings-section {
+  font-weight: var(--fw-700);
+  color: var(--clr-primary-1);
+}
+
+.rating-item {
+  background-color: var(--clr-neutral-2);
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.reviews-section {
+  color: var(--clr-neutral-3);
+  font-weight: var(--fw-500);
+  text-align: left;
+  line-height: 1.3;
+}
+
+.review-item {
+  background-color: var(--clr-primary-1);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.profile-pic {
+  width: 2.5rem;
+  border-radius: 100vh;
+  overflow: hidden;
+}
+
+.profile-name {
+  font-weight: var(--fw-700);
+}
+
+.profile-verified {
+  color: var(--clr-primary-2);
+}
+
+@media screen and (min-width: 1250px) {
+  body {
+    text-align: left;
+    background: url(images/bg-pattern-top-desktop.svg) top left no-repeat,
+      url(images/bg-pattern-bottom-desktop.svg) bottom right no-repeat;
+  }
+
+  .card-container {
+    max-width: 63rem;
+    grid-template-columns: 1fr auto;
+    row-gap: 3rem;
+    column-gap: 16rem;
+  }
+
+  .card-title {
+    font-size: 3rem;
+  }
+
+  .reviews-section {
+    grid-column: 1 / -1;
+  }
+
+  .rating-item,
+  .reviews-section {
+    flex-direction: row;
+  }
+
+  .ratings-section {
+    padding-top: 2rem;
+  }
+
+  .rating-item {
+    padding: 0.6rem 2rem;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .rating-item:nth-of-type(1) {
+    position: relative;
+    right: 4rem;
+  }
+
+  .rating-item:nth-of-type(2) {
+    position: relative;
+    right: 2rem;
+  }
+
+  .review-item:nth-of-type(2) {
+    position: relative;
+    top: 1rem;
+  }
+
+  .review-item:nth-of-type(3) {
+    position: relative;
+    top: 2rem;
+  }
+}
